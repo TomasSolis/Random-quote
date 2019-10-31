@@ -1,12 +1,15 @@
+// Collection of quotes
+
 const quotes = [
   { quote: 'Can you imagine what I could do if I could do all I can?',
-   source: 'Sun Tzu: The art of war'
+   source: 'Sun Tzu: The art of war',
+   citation: 'Book'
   },
   {
       quote: "I live my life a quarter mile at a time. Nothing else matters: not the mortgage, not the store, not my team and all their bullshit. For those ten seconds or less, I'm free.",
-      source: 'Dominic Toretto: The fast and the furious',
-      citation: 'Movie',
-      year: 2001
+      source: '       ' + 'Dominic Toretto: Fast and the furious',
+      
+      
   },
   {
       quote: "I have money, it's trust and character I need around me. You know who you choose to be around you, let's you know who you are.",
@@ -35,15 +38,18 @@ const quotes = [
   },
   {
       quote:"Now you understand Just why my head's not bowed. I don't shout or jump about Or have to talk real loud. When you see me passing It ought to make you proud.",
-      source:"Maya Angelou: Phenomenal Woman"
+      source:"Maya Angelou: Phenomenal Woman",
+      citation: 'Poetry',
   },
   {
       quote: "Don't judge each day by the harvest you reap but by the seeds that you plant.",
-      source:"Robert Louis Stevenson"
+      source:"Robert Louis Stevenson",
+      citation: 'Poetry',
   },
   {
     quote:"The greatest glory in living lies not in never falling, but rising everytime we fall.",
-    source:"Nelson Mandela"
+    source:"Nelson Mandela",
+    
   
   },
   {
@@ -52,7 +58,7 @@ const quotes = [
   
   },
   {
-    quote:"It better to fail in originality that to succeed in imitation.",
+    quote:"It's better to fail in originality that to succeed in imitation.",
     source:"Herman Melville"
   
   },
@@ -63,7 +69,7 @@ const quotes = [
   },
   {
     quote:"Winning isnt everthing, but wanting to win is.",
-    source:"Vinve Lombardi"
+    source:"Vince Lombardi"
   
   },
   {
@@ -98,6 +104,7 @@ const quotes = [
   {
     quote:"BURN!",
     source:"Michael Kelso: That 70's Show"
+    
   },
   {
     quote:"I just wanna say...when my time comes, I want to be buried face down, so that anyone who doesn't like me can kiss my ass!",
@@ -109,18 +116,22 @@ const quotes = [
   },
   {
     quote:"Everybody wants their first make-out to be special, in some place romantic like Ireland or Disney World.",
-    source:"Jackie Burkhart: That 70's Show"
+    source:"Jackie Burkhart: That 70's Show",
+    citation: "Comedy T.V.",
+    year: 2000
   },
   {
     quote:"The three true branches of the government are: military, corporate and Hollywood.",
-    source:"Steven Hyde: That 70's Show"
+    source:"Steven Hyde: That 70's Show",
+    citation: 'Comedy T.V.',
+    year: 1998
   }
 
     
   ];
 
 
-function getRandomQuote (quotes){
+function getRandomQuote (){
     // Random number generator
     let quoteIndex =  Math.floor(Math.random() * quotes.length);
     return quotes[quoteIndex];
@@ -130,11 +141,16 @@ function getRandomQuote (quotes){
 
 
 function printQuote (){
+  //sets a value for the variables lsited below.
   let html = '';
+
+  //calls the getRandomQuote for the list of quotes and properties in the array of objects.
   let printRandomQuote = getRandomQuote();
+
   // displays quote from html file 
   html+= '<p class = "quote">' + printRandomQuote.quote + '</p>';
-  //displays all object properties if every object is filled in.
+
+  //displays all object properties if filled in.
   html += '<p class = "source">' + printRandomQuote.source;
   
   
@@ -150,6 +166,8 @@ function printQuote (){
  document.getElementById("quote-box").innerHTML = html;
 
 }
+//automatic random quote when page is first loaded
+printQuote();
 
 
 /***
@@ -159,4 +177,11 @@ function printQuote (){
   comment.
 ***/
 
-document.getElementById('loadQuote').addEventListener("click", printQuote, false); ``` 
+document.getElementById('loadQuote').addEventListener("click", printQuote, false); 
+
+
+
+
+
+
+
