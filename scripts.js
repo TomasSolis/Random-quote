@@ -130,7 +130,7 @@ const quotes = [
     
   ];
 
-
+//getRandomQuote function pulls random quotes from the array of objects.
 function getRandomQuote (){
     // Random number generator
     let quoteIndex =  Math.floor(Math.random() * quotes.length);
@@ -139,7 +139,7 @@ function getRandomQuote (){
 }
 
 
-
+//printQuote function calls getRandomQuote function and assigns it to the printRandomQuote variable.
 function printQuote (){
   //sets a value for the variables lsited below.
   let html = '';
@@ -153,11 +153,12 @@ function printQuote (){
   //displays all object properties if filled in.
   html += '<p class = "source">' + printRandomQuote.source;
   
-  
+  // if statment used to test if the quote object has a citation property. If so, produces a concatinated string . 
   if("citation" in printRandomQuote){
     html += '<span class = "citation">' + printRandomQuote.citation + '</span>';
 
   }
+  // if statment used to test if the quote object has a year property. If so, produces a concatinated string . 
   if ("year" in printRandomQuote){
     html+= '<span class = "year">' + printRandomQuote.year + '</span>' + '</p>';
 
